@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/order-confirm_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    {% if message %}
+        <h1>{{message}}</h1>
+        <h2>We look forward to seeing you {{username}}</h2>
+    {% else %}
+        <h1>Hello {{ username }}</h1>
+        <h2>This will get you {{ points }} rewards points</h2>
+        <form method="POST" action="">
+            <label for="card_number">Card number</label>
+            <br><br>
+            <input name="card_number" id="card_number" type="text" placeholder="Card number" required="True" max="16">
+            <br><br>
+            <label for="cvv">CVV</label>
+            <br><br>
+            <input name="cvv" id="cvv" type="text" placeholder="CVV" required="True" max="3">
+            <br><br>
+            <label for="expiry_date">Expiration date</label>
+            <br><br>
+            <input name="expiry_date" id="expiry_date" type="date" placeholder="Card expiration date" required="True" min="{{todays_date}}">
+            <br><br>
+            <div class="form-section">
+            <label for="first_address_line">First line of billing address</label>
+            <br><br>
+            <input name="first_address_line" id="first_address_line" type="text" placeholder="First line of address" required="True">
+            <br><br>
+            <label for="second_address_line">Second line of billing address</label>
+            <br><br>
+            <input name="second_address_line" id="second_address_line" type="text" placeholder="Second line of address" required="True">
+            <br><br>
+            <label for="city">City</label>
+            <br><br>
+            <input name="city" id="city" type="text" placeholder="City" required="True">
+            <br><br>
+            <label for="county">County</label>
+            <br><br>
+            <input name="county" id="county" type="text" placeholder="County" required="True">
+            <br><br>
+            </div>
+            <div class="form-submit">
+            <label for="discount">Discount code</label>
+            <br><br>
+            <input name="discount" id="discount" type="text" placeholder="Discount">
+            <br><br>
+            <input type="submit" text="Pay Now" class="submit">
+            </div>
+        </form>
+        {% if basket[0] == 'Tickets' %}
+            <div class="basket-tickets">
+                <h2>Basket</h2>
+                <h2>{{ basket[1] }} Ticket - X{{ basket[2] }} </h2>
+                <h1>Total: £{{ price }}</h1>
+            </div>
+        {% else %}
+        <div class="basket-hotel">
+            <h2>Basket</h2>
+            <h2>{{ basket[1] }} - £{{ basket[2] }} x {{nights}} nights</h2>
+            <h1>Total: £{{ price }}</h1>
+        </div>
+        {% endif %}
+    {% endif %}
+</html>
+{% endblock %}

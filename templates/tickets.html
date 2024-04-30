@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/tickets_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Hello {{username}}</h1>
+        <h2>To book an educational school visit please <a href="/school-tickets" style="color: #00b2d3">book here</a></h2>
+        <form action="" method="POST">
+            <label for="amount_of_tickets">Number of tickets</label>
+            <br><br>
+            <input id='amount_of_tickets' name="amount_of_tickets" type="number" min="1" max="10" placeholder="1" required="True">
+            <br><br>
+            <label for="ticket_type">Ticket type</label>
+            <br><br>
+            <select id='ticket_type' name="ticket_type" required="True">
+                <option value="Premium">Premium (Whole day visit) - £20pp</option>
+                <option value="Standard">Standard (Half day visit) - £10pp</option>
+            </select>
+            <br><br>
+            <label for="requests">Special requests</label>
+            <br><br>
+            <input id='requests' name="requests" type="text" placeholder="Any special requests or occassions?">
+            <br><br>
+            <label for="date">Date of visit</label>
+            <br><br>
+            <input id="date" name="date" type="date" placeholder="Date" required="True" min="{{ todays_date }}">
+            <br><br>
+            <input class='submit' name="add_to_basket" type="submit" value="Add to basket">
+        </form>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+        <div class="image-grid">
+            <img class='image-1' src="../static/images/elephant.jpg">
+            <br><br>
+            <img class='image-2' src="../static/images/giraffe.jpg">
+            <br><br>
+            <img class='image-3' src="../static/images/zebra.jpg">
+        </div>
+    </body>
+</html>
+{% endblock %}

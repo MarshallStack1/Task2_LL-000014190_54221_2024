@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/pick-date_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <form action="" method="POST">
+        <label for='user_checkin_date'>Check in date</label>
+        <br><br>
+        <input id="user_checkin_date" name="user_checkin_date" type="date" placeholder="Date" required="True" min="{{min_date}}" max="{{max_date}}">
+        <br><br>
+        <label for="user_checkout_date">Check out date</label>
+        <br><br>
+        <input id="user_checkout_date" name="user_checkout_date" type="date" placeholder="Date" required="True" min="{{min_date}}">
+        <br><br>
+        <input class='submit' type="submit" value="Select dates">
+    </form>
+    {% if error %}
+    <p>{{error}}</p>
+    {% endif %}
+    <script>
+        document.getElementById("user_checkin_date").addEventListener("change", function() {
+            var user_checkin_date = document.getElementById("user_checkin_date").value;
+            document.getElementById("user_checkout_date").setAttribute("min", user_checkin_date);
+        });
+    </script>
+</html>
+{% endblock %}

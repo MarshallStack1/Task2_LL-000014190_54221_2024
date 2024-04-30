@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/educational-resources_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <div class="animals">
+        {% for i in range (animals_names|length)%}
+        <a href="{{url_for('animal', animal_name=animals_names[i])}}"><h1>{{animals_names[i]}}</h1></a>
+        <p>{{animals_descriptions[i]}}</p>
+        {% endfor %}
+    </div>
+</html>
+{% endblock %}

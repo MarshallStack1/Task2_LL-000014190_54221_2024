@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/animal_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>{{animal_name}}</h1>
+        <p>{{animal_description}}</p>
+        <img src="{{animal_image}}" style="margin-top: -80vh; margin-left: 75vw; height: 25vh; width: auto; border: 5px white solid;">
+    </body>
+</html>
+{% endblock %}

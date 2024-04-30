@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/my-bookings_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Hello {{username}}</h1>
+        <h2>You have {{user_points}} rewards points</h2>
+        {% if message %}
+            <p>{{message}}</p>
+        {% endif %}
+        <h1 class="bookings-h1">Your Bookings</h1>
+        {% if booking_message %}
+        <h2 class="bookings-h2">{{booking_message}}</h2>
+        {% else %}
+        <div class="bookings">
+            {% for booking in user_bookings %}
+            <div class="booking-content">
+                <h3>Arrival: {{ booking.arrival_date }}</h3>
+                <h3>Checkout: {{ booking.leaving_date }}</h3>
+                <h3>Total: £{{ booking.total}}</h3>
+                <a href="{{url_for('cancel_booking', booking_id=booking.id, username=username)}}"><h3>Cancel this booking</h3></a>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+        <h1 class="rewards-h1">Your Rewards</h1>
+        {% if rewards_message %}
+        <h2 class="rewards-h2">{{rewards_message}}</h2>
+        <div class="rewards">
+        {% else %}
+            <div class="rewards">
+            {% for i in range (rewards_names|length)%}
+                <div class="rewards-content">
+                    <h2>{{rewards_names[i]}}</h2>
+                    <h2>{{rewards_descriptions[i]}}</h2>
+                    <h2>{{rewards_required_points[i]}}</h2>
+                    <form action="{{url_for('get_reward', reward_name=rewards_names[i], username=username)}}">
+                        <input type="submit" value="Get this!">
+                    </form>
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+        <h1 class="codes-h1">Your Discount Codes</h1>
+        {% if codes_message %}
+        <h2 class="codes-h2">{{codes_message}}</h2>
+        {% else %}
+            <div class="codes">
+                {% for i in range (my_codes|length)%}
+                <div class="codes-content">
+                    <h2>{{my_codes[i]}}</h2>
+                    <h2>{{my_code_names[i]}}</h2>
+                </div>
+                {% endfor %}
+        {% endif %}
+        </div>
+    </body>
+</html>
+{% endblock %}

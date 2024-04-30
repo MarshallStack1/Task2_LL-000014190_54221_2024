@@ -1,0 +1,12 @@
+body .animals{
+    padding-left: 5vw;
+    padding-top: 10vh;
+}
+body .animals h1{
+    font-size: 30px;
+    color: #00b2d3;
+    text-decoration: None;
+}
+body{
+    font-family: "PT Serif", serif;
+}

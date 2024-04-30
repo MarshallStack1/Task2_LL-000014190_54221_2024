@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/register_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Account Registration</h1>
+        <form action="" method="POST">
+            <label for="first_name">First name</label>
+            <br><br>
+            <input id='first_name' name="first_name" type="text" placeholder="John" required="True">
+            <br><br>
+            <label for="sur_name">Last name</label>
+            <br><br>
+            <input id='sur_name' name="sur_name" type="text" placeholder="Smith" required="True">
+            <br><br>
+            <label for="username">Username</label>
+            <br><br>
+            <input id='username' name="username" type="text" placeholder="Username" required="True">
+            <br><br>
+            <label for="password">Password</label>
+            <br><br>
+            <input id='password' name="password" type="password" placeholder="Password" required="True">
+            <br><br>
+            <label for="email">Email addrress</label>
+            <br><br>
+            <input id='email' name="email" type="email" placeholder="JohnSmith@gmail.com" required="True">
+            <br><br>
+            <label for="phone">Phone number</label>
+            <br><br>
+            <input id='phone' name="phone" type="tel" placeholder="074757 8563" required="True">
+            <br><br>
+            <input id='terms' name="terms" type="checkbox" placeholder="Yes I agree" required="True">
+            <p>By ticking the box you agree to our <a href="/terms-and-conditions" style="color: #00b2d3">terms and conditions</a>.</p>
+            <br>
+            <input class="submit" type="submit" value="Submit">
+        </form>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+    </body>
+</html>
+{% endblock %}

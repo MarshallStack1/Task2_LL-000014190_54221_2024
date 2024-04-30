@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/book-a-room_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <h1>Booking for {{username}} from {{user_checkin_date}} - {{user_checkout_date}}</h1>
+    <h2>Please note you may only book one room at a time</h2>
+    <div class="rooms">
+    {% for i in range (room_names|length)%}
+    <div class="room-content">
+    <h2>{{room_names[i]}}</h2>
+    <p>{{room_descriptions[i]}}</p>
+    <p>Room capacity: {{room_capacitys[i]}} persons</p>
+    <p>The price per night is: £{{room_prices[i]}}</p>
+    <form action="{{url_for('book', username=username, room_name=room_names[i])}}" method="post">
+        <button type="submit">Book Now</button>
+    </form>
+    </div>
+    {% endfor %}
+    </div>
+</html>
+{% endblock %}

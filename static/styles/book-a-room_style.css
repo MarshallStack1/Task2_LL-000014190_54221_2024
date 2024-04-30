@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+    color: whitesmoke;
+    font-family: "PT Serif", serif;
+}
+body h1{
+    margin-top: 15vh;
+}
+body .rooms{
+    text-align: center;
+    margin-top: 5vh;
+}
+body .rooms .room-content{
+    border: solid 5px whitesmoke;
+    background: green;
+    display: inline-block;
+    padding: 5px;
+}
+body .rooms .room-content form button{
+    background-color: #873174;
+    font-family: "PT Serif", serif;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+}

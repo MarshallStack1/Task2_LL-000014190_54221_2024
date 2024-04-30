@@ -1,0 +1,79 @@
+body{
+    text-align: center;
+    font-family: "PT Serif", serif;
+}
+body h1{
+    padding-top: 10vh;
+}
+body .bookings{
+    float: right;
+    display: grid;
+    padding: 5vw;
+    margin-right: -17vw;
+}
+body .bookings-h1{
+    margin-top: -15vh;
+    float: right;
+    padding-right: 15vw;
+}
+body .bookings-h2{
+    float: right;
+    margin-right: -12vw;
+}
+body .bookings .booking-content{
+    border: 5px solid white;
+    background: #008011;
+    grid-column-start: 1;
+}
+body .bookings .booking-content a{
+    color: #00b2d3;
+}
+body .bookings .booking-content h3{
+    text-align: left;
+}
+
+
+body .rewards-h1{
+    margin-top: -15vh;
+    float: left;
+    padding-left: 15vw;
+}
+body .rewards-h2{
+    float: left;
+    margin-left: -11vw;
+}
+body .rewards{
+    display: grid;
+    justify-content: center;
+    margin-left: -21vw;
+    float: left;
+}
+body .rewards .rewards-content{
+    border: 5px solid white;
+    background: #008011;
+    justify-content: center;
+}
+body .rewards .rewards-content form input{
+    background-color: #873174;
+    border: solid whitesmoke 5px;
+    border-radius: 20px;
+    color: whitesmoke;
+    font-family: "PT Serif", serif;
+}
+
+
+body .codes-h1{
+    text-align: center;
+}
+body .codes-h2{
+    text-align: center;
+}
+body .codes{
+    display: grid;
+    justify-content: center;
+}
+body .codes .codes-content{
+    border: 5px solid white;
+    background: #008011;
+    justify-content: center;
+}

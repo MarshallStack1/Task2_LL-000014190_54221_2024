@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}
+body h1{
+    padding-top: 10vh;
+    font-size: 24px;
+}
+body p{
+    font-size: 20px;
+    background-color: #4d4d4d;
+    background-color: rgba(161, 161, 161, 0.5);
+    border: 5px solid whitesmoke;
+    text-align: left;
+}

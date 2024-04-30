@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Riget Zoo Adventures</title>
+        <link rel="stylesheet" href="../static/styles/main_style.css">
+        <link rel="stylesheet" href="../static/styles/login_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form action="" method="POST">
+            <label for='username'>Username</label>
+            <br><br>
+            <input id='username' name="username" type="text" placeholder="Username" required="True">
+            <br><br>
+            <label for="password">Password</label>
+            <br><br>
+            <input id='password' name="password" type="password" placeholder="Password" required="True">
+            <br><br>
+            <input class='submit' type="submit" value="Submit">
+        </form>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+body h1{
+    padding-top: 10vh
+}
+body form{
+    padding-top: 5vh;
+    text-align: center;
+}
+body form input{
+    height: 5vh;
+    width: 20vw;
+    font-family: "PT Serif", serif;
+    background-color: #008011;
+    color: whitesmoke;
+    font-size: 20px;
+    border: solid whitesmoke 5px;
+    border-radius: 20px;
+}
+::placeholder{
+    color: whitesmoke;
+}
+body form .submit{
+    background-color: #873174;
+}
+body form label{
+    font-size: 24px;
+}
